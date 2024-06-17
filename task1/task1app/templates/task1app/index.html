@@ -1,27 +1,73 @@
-<link rel="stylesheet" type="text/css" href="{% static 'task1app/styles.css' %}">
-<script src="{% static 'task1app/script.js' %}"></script>
-<form method="post">
-    {% csrf_token %}
-    <input type="text" name="ticker" placeholder="Ticker">
-    <input type="date" name="start_date">
-    <input type="date" name="end_date">
-    <select name="interval">
-        <option value="1d">1 Day</option>
-        <option value="1wk">1 Week</option>
-        <option value="1mo">1 Month</option>
-    </select>
-    <button type="submit">Fetch Data</button>
-</form>
-<table>
-    {% for date, values in data.items %}
-    <tr>
-        <td>{{ date }}</td>
-        <td>{{ values['Open'] }}</td>
-        <td>{{ values['High'] }}</td>
-        <td>{{ values['Low'] }}</td>
-        <td>{{ values['Close'] }}</td>
-        <td>{{ values['Adj Close'] }}</td>
-        <td>{{ values['Volume'] }}</td>
-    </tr>
-    {% endfor %}
-</table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <title>Stock Data Fetcher</title>
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="mb-4">Fetch Yahoo Finance Data</h2>
+    <form method="post" class="mb-4">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <input type="text" name="ticker" class="form-control" placeholder="Ticker">
+            </div>
+            <div class="form-group col-md-3">
+                <input type="date" name="start_date" class="form-control">
+            </div>
+            <div class="form-group col-md-3">
+                <input type="date" name="end_date" class="form-control">
+            </div>
+            <div class="form-group col-md-2">
+                <select name="interval" class="form-control">
+                    <option value="1d">1 Day</option>
+                    <option value="1wk">1 Week</option>
+                    <option value="1mo">1 Month</option>
+                </select>
+            </div>
+            <div class="form-group col-md-1">
+                <button type="submit" class="btn btn-primary">Fetch Data</button>
+            </div>
+        </div>
+    </form>
+
+    {% if data %}
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Date</th>
+                        <th>Open</th>
+                        <th>High</th>
+                        <th>Low</th>
+                        <th>Close</th>
+                        <th>Adj Close</th>
+                        <th>Volume</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for date, values in data.items %}
+                    <tr>
+                        <td>{{ date }}</td>
+                        <td>{{ values['Open'] }}</td>
+                        <td>{{ values['High'] }}</td>
+                        <td>{{ values['Low'] }}</td>
+                        <td>{{ values['Close'] }}</td>
+                        <td>{{ values['Adj Close'] }}</td>
+                        <td>{{ values['Volume'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% elif data.error %}
+        <div class="alert alert-danger">{{ data.error }}</div>
+    {% endif %}
+</div>
+</body>
+</html>
