@@ -1,0 +1,27 @@
+<link rel="stylesheet" type="text/css" href="{% static 'task1app/styles.css' %}">
+<script src="{% static 'task1app/script.js' %}"></script>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="ticker" placeholder="Ticker">
+    <input type="date" name="start_date">
+    <input type="date" name="end_date">
+    <select name="interval">
+        <option value="1d">1 Day</option>
+        <option value="1wk">1 Week</option>
+        <option value="1mo">1 Month</option>
+    </select>
+    <button type="submit">Fetch Data</button>
+</form>
+<table>
+    {% for date, values in data.items %}
+    <tr>
+        <td>{{ date }}</td>
+        <td>{{ values['Open'] }}</td>
+        <td>{{ values['High'] }}</td>
+        <td>{{ values['Low'] }}</td>
+        <td>{{ values['Close'] }}</td>
+        <td>{{ values['Adj Close'] }}</td>
+        <td>{{ values['Volume'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
