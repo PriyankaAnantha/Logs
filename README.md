@@ -127,8 +127,8 @@ Logs/
 - **Form Data:**
     - `ticker` (e.g., `AAPL`)
     - `timeframe` (e.g., `1d`)
-    - `start_date` (e.g., `2022-01-01`)
-    - `end_date` (e.g., `2022-12-31`)
+    - `start_date` (e.g., `01-12-2023`)
+    - `end_date` (e.g., `01-06-2024`)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/PriyankaAnantha/Logs/blob/main/task1/LICENSE.txt) file for details.
