@@ -131,7 +131,7 @@ Logs/
     - `end_date` (e.g., `2022-12-31`)
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
 
 ## Acknowledgemets
 Mentor: Mr. Shivendra Singh 
