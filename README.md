@@ -12,7 +12,6 @@ For data fetch, create fast API that accept yahoo finance company ticker name, t
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [API Documentation](#api-documentation)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Overview
