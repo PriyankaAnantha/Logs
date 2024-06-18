@@ -13,6 +13,7 @@ For data fetch, create fast API that accepts yahoo finance company ticker name, 
 - [Project Structure](#project-structure)
 - [API Documentation](#api-documentation)
 - [License](#license)
+- [Acknowledgemets](#Acknowledgemets)
 
 ## Overview
 This project demonstrates the integration of Django with FastAPI to fetch financial data from Yahoo Finance. The Django application provides a web interface to input stock ticker information and retrieve historical data through a FastAPI backend.
