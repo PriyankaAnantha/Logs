@@ -1,6 +1,6 @@
 # Task 1: Django and FastAPI Integration
 Create an UI using Django which render an UI table. 
-For data fetch, create fast API that accept yahoo finance company ticker name, time frame and start date and end date
+For data fetch, create fast API that accepts yahoo finance company ticker name, time frame and start date and end date
 
 ---
 ## Table of Contents
