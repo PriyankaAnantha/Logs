@@ -5,7 +5,7 @@ import csv
 import io
 
 def fetch_yahoo_data(ticker, timeframe, start_date, end_date):
-    url = "http://127.0.0.1:8001/fetch-data/"  # Updated port to 8001
+    url = "http://127.0.0.1:8001/fetch-data/"  
     payload = {
         "ticker": ticker,
         "timeframe": timeframe,
