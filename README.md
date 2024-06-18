@@ -134,5 +134,5 @@ Logs/
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/PriyankaAnantha/Logs/blob/main/task1/LICENSE.txt) file for details.
 
 ## Acknowledgemets
-Mentor: Mr. Shivendra Singh 
+Mr. Shivendra Singh 
 
